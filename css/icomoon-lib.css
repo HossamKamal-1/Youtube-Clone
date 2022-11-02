@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?7ybefm');
+  src: url('../fonts/icomoon.eot?7ybefm#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?7ybefm') format('truetype'),
+    url('../fonts/icomoon.woff?7ybefm') format('woff'),
+    url('../fonts/icomoon.svg?7ybefm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-person_outline:before {
+  content: "\e916";
+}
+
+.icon-more_vert:before {
+  content: "\e915";
+}
+
+.icon-sms_failed:before {
+  content: "\e913";
+}
+
+.icon-help_outline:before {
+  content: "\e90a";
+}
+
+.icon-outlined_flag:before {
+  content: "\e90b";
+}
+
+.icon-settings:before {
+  content: "\e90c";
+}
+
+.icon-music_note:before {
+  content: "\e90d";
+}
+
+.icon-local_fire_department:before {
+  content: "\e90e";
+}
+
+.icon-subscriptions:before {
+  content: "\e90f";
+}
+
+.icon-video_library:before {
+  content: "\e910";
+}
+
+.icon-history:before {
+  content: "\e911";
+}
+
+.icon-restore:before {
+  content: "\e911";
+}
+
+.icon-video_library1:before {
+  content: "\e912";
+}
+
+.icon-home_filled:before {
+  content: "\e909";
+}
+
+.icon-clear:before {
+  content: "\e908";
+}
+
+.icon-arrow_forward_ios:before {
+  content: "\e906";
+}
+
+.icon-arrow_back_ios:before {
+  content: "\e907";
+}
+
+.icon-notifications:before {
+  content: "\e905";
+}
+
+.icon-video_call:before {
+  content: "\e904";
+}
+
+.icon-keyboard_voice:before {
+  content: "\e901";
+}
+
+.icon-keyboard:before {
+  content: "\e903";
+}
+
+.icon-menu1:before {
+  content: "\e902";
+}
+
+.icon-search:before {
+  content: "\e900";
+}
+
+.icon-youtube-play:before {
+  content: "\e914";
+}

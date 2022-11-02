@@ -1,0 +1,297 @@
+:root {
+  --main-color: #0F0F0F;
+  --blue-color: #3ea6ff;
+  --hover-blue-color: #263850;
+  --transparent-background: #ffffff14;
+  --hover-gray-color: #ffffff1a;
+  --border-color: hsl(0, 0%, 18.82%);
+  --main-transition: 0.3s;
+}
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-scroll-behaviour: smooth;
+  -moz-scroll-behaviour: smooth;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background-color: var(--main-color);
+  height: 1200px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End Global Rules */
+/* Start Components */
+.tooltip {
+  position: relative;
+}
+
+.tooltip:before {
+  content: attr(text-data);
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 10px);
+  left: 50%;
+  display: none;
+  background-color: #222222;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover::before {
+  display: block;
+}
+
+/* End Components */
+/* Start Header */
+header {
+  width: 100%;
+  min-height: 59px;
+  padding: 5px 20px;
+  background-color: var(--main-color);
+  position: sticky;
+  top: 0;
+}
+
+
+header nav .nav-left .icon {
+  font-size: 32px;
+  color: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+header nav .nav-left .icon:hover {
+  background-color: var(--hover-gray-color);
+}
+
+header nav .nav-left a img {
+  width: 150px;
+  height: 49px;
+}
+
+header nav .nav-left a span {
+  top: 7px;
+  right: 2px;
+  font-size: 10px;
+  color: #AAA;
+}
+
+
+@media (min-width: 768px) {
+  header nav .nav-mid {
+    flex-grow: 0.3;
+  }
+}
+
+@media (max-width: 767px) {
+  header nav .nav-mid {
+    margin-left: auto;
+  }
+}
+
+header nav .nav-mid form a.search-mobile {
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  display: none;
+}
+
+header nav .nav-mid form a.search-mobile:hover {
+  background-color: var(--transparent-background);
+}
+
+@media (max-width: 767px) {
+  header nav .nav-mid form a.search-mobile {
+    display: flex;
+  }
+}
+
+header nav .nav-mid form a.search-mobile .icon {
+  font-size: 25px;
+  color: white;
+
+}
+
+
+header nav .nav-mid form>div {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  header nav .nav-mid form>div {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+header nav .nav-mid form>div>.icon {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-size: 22px;
+  color: white;
+}
+
+header nav .nav-mid form>div input[type="search"] {
+  padding: 10px 0;
+  padding-left: 52px;
+  padding-right: 6px;
+  border-radius: 20px 0 0 20px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  caret-color: white;
+  color: white;
+}
+
+header nav .nav-mid form>div input[type="search"]:focus {
+  outline: 1px solid var(--blue-color);
+  border: transparent;
+}
+
+header nav .nav-mid form>div input[type="search"]::placeholder {
+  color: #666;
+}
+
+header nav .nav-mid form .search-button {
+  width: 60px;
+  align-self: stretch;
+  border: 1px solid var(--border-color);
+  background-color: #222222;
+  border-radius: 0 20px 20px 0;
+}
+
+header nav .nav-mid form .search-button .icon {
+  font-size: 25px;
+  color: white;
+}
+
+header nav .nav-mid form .search-voice {
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  background-color: #181818;
+}
+
+
+@media (min-width: 768px) {
+  header nav .nav-mid form .search-voice:hover {
+    background-color: var(--hover-gray-color);
+  }
+}
+
+@media (max-width: 767px) {
+  header nav .nav-mid form .search-voice {
+    border-radius: 0;
+  }
+
+  header nav .nav-mid form .search-voice .icon:hover {
+    border: transparent;
+    background-color: var(--hover-gray-color);
+    border-radius: 50%;
+    padding: 6px;
+  }
+}
+
+header nav .nav-mid form .search-voice .icon {
+  font-size: 25px;
+  color: white;
+}
+
+header nav .nav-right {
+  margin-left: 10px;
+}
+
+header nav .nav-right>.icon {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+header nav .nav-right .sign-in {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: var(--blue-color);
+  transition: var(--main-transition);
+}
+
+header nav .nav-right .sign-in:hover {
+  background-color: var(--hover-blue-color);
+}
+
+header nav .nav-right .sign-in span {
+  white-space: nowrap;
+}
+
+header nav .nav-right .sign-in .icon {
+  border: 1px solid var(--blue-color);
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+/* End Header */
+/* Start aside */
+aside {
+  color: white;
+  width: 82px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+aside ul {
+  background-color: var(--main-color);
+  padding: 0 3px;
+}
+
+
+
+aside li a {
+  padding: 20px 0;
+  color: white;
+  font-size: 10px;
+  border-radius: 10px;
+
+}
+aside li a:hover {
+  background-color: var(--hover-gray-color);
+}
+
+aside li a .icon {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+/* End aside */
+
+/* Start main */
+/* main {
+  margin-top: 59px;
+  margin-left: 82px;
+  height: calc(100vh - 59px);
+  width: 100%;
+  position: fixed;
+} */
+/* End main */
