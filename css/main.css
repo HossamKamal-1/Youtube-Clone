@@ -23,9 +23,18 @@ html {
 }
 
 body {
+  position: relative;
   font-family: 'Roboto', 'Arial', sans-serif;
   background-color: var(--main-color);
-  height: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 ul {
@@ -47,7 +56,6 @@ a {
 .tooltip:before {
   content: attr(text-data);
   position: absolute;
-  z-index: 1;
   top: calc(100% + 10px);
   left: 50%;
   display: none;
@@ -70,10 +78,11 @@ header {
   min-height: 59px;
   padding: 5px 20px;
   background-color: var(--main-color);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  z-index: 2;
 }
-
 
 header nav .nav-left .icon {
   font-size: 32px;
@@ -89,6 +98,12 @@ header nav .nav-left .icon:hover {
 header nav .nav-left a img {
   width: 150px;
   height: 49px;
+}
+
+@media (max-width: 767px) {
+  header nav .nav-left a img {
+    width: 100px;
+  }
 }
 
 header nav .nav-left a span {
@@ -246,6 +261,13 @@ header nav .nav-right .sign-in span {
   white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+  header nav .nav-right .sign-in span {
+    display: none;
+  }
+
+}
+
 header nav .nav-right .sign-in .icon {
   border: 1px solid var(--blue-color);
   border-radius: 50%;
@@ -255,10 +277,18 @@ header nav .nav-right .sign-in .icon {
 /* End Header */
 /* Start aside */
 aside {
+  position: fixed;
+  left: 0;
   color: white;
   width: 82px;
-  height: 100%;
+  top: 59px;
+  height: calc(100vh - 59px);
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
 }
 
 aside ul {
@@ -275,6 +305,7 @@ aside li a {
   border-radius: 10px;
 
 }
+
 aside li a:hover {
   background-color: var(--hover-gray-color);
 }
@@ -285,7 +316,136 @@ aside li a .icon {
 }
 
 /* End aside */
+/* Start Filters */
+.filters {
+  position: fixed;
+  left: 82px;
+  top: 59px;
+  width: calc(100% - 82px);
+  height: 50px;
+  padding: 5px 10px;
+  background-color: var(--main-color);
+  z-index: 1;
+}
 
+.filters>.icon {
+  color: white;
+  cursor: pointer;
+}
+
+.filters .filter-options {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.filters .filter-options::-webkit-scrollbar {
+  display: none;
+}
+
+.filters .filter-options a {
+  padding: 6px;
+  color: white;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff1a;
+  border-radius: 5px;
+  flex-shrink: 0;
+  transition: var(--main-transition);
+}
+
+.filters .filter-options a.active {
+  background-color: white;
+  color: black;
+}
+
+.filters .filter-options a:not(.active):hover {
+  background-color: #ffffff2a;
+
+}
+
+/* End Filters */
+/* Start Video Container */
+.video-container {
+  margin-top: calc(50px + 59px);
+  margin-left: 82px;
+  width: calc(100% - 82px);
+  padding: 20px;
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px 15px;
+}
+
+@media (max-width: 767px) {
+  .video-container {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+}
+
+.video-container .video {
+  background-color: var(--main-color);
+}
+
+.video-container .video .thumbnail {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.video-container .video .thumbnail img {
+  max-width: 100%;
+}
+
+.video-container .video .thumbnail .video-time {
+  background-color: var(--main-color);
+  color: white;
+  bottom: 3px;
+  right: 4px;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.video-container .video .video-info {
+  padding: 5px;
+}
+
+.video-container .video .video-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+.video-container .video .video-info .text .video-title {
+  color: white;
+  font-weight: 500;
+  max-width: 268px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.video-container .video .video-info .text>span {
+  margin-bottom: 2px;
+}
+
+.video-container .video .video-info .text>span .icon {
+  color: #aaa;
+}
+
+.video-container .video .video-info .text>div .views,
+.video-container .video .video-info .text>div .video-date,
+.video-container .video .video-info .text>span {
+  color: #aaa;
+}
+
+.video-container .video .video-info .text>div .video-date::before {
+  content: "•";
+  margin: 0 3px;
+}
+
+/* Start End Container */
 /* Start main */
 /* main {
   margin-top: 59px;
